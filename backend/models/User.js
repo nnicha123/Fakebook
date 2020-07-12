@@ -17,7 +17,7 @@ module.exports = (sequelize,DataTypes) => {
         timestamps:false
     })
     model.associate = models => {
-        model.belongsToMany(models.User,{through:models.Be,foreignKey:'user_id'})
+        model.belongsToMany(models.User,{as:'friend',foreignKey: 'user_id',through:models.Be})
         model.hasMany(models.Post,{foreignKey:'user_id'})
         model.hasMany(models.Comment,{foreignKey:'user_id'})
     }

@@ -1,5 +1,5 @@
 module.exports = (sequelize,DataTypes) => {
-    const model = ('Comment',{
+    const model = sequelize.define('Comment',{
         text:{
             type:DataTypes.STRING(255)
         }
